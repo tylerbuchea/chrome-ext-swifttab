@@ -5,13 +5,13 @@ html {
 body {
   margin: 0;
   padding-top: 56px;
-  background: #f1f1f1;
+  background: #1f2023;
   /*-webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;*/
   font-family: Roboto, system-ui, sans-serif;
   font-size: 13px;
   line-height: 1.2;
-  color: #212121;
+  color: #f1f1f1;
 
   /*
     preventing scroll on the body removes the "bounce" effect
@@ -38,7 +38,7 @@ h6 {
 
 a {
   text-decoration: none;
-  color: #424242;
+  color: #f1f1f1;
   /*transition: all .25s ease-out;*/
 }
 
@@ -98,37 +98,37 @@ a {
 /* Adjust tile width based on viewport width */
 @media screen and (min-width: 450px) {
   .tile {
-    width: calc(1/2 * 100%);
+    width: calc(1 / 2 * 100%);
   }
 }
 @media screen and (min-width: 675px) {
   .tile {
-    width: calc(1/3 * 100%);
+    width: calc(1 / 3 * 100%);
   }
 }
 @media screen and (min-width: 900px) {
   .tile {
-    width: calc(1/4 * 100%);
+    width: calc(1 / 4 * 100%);
   }
 }
 @media screen and (min-width: 1175px) {
   .tile {
-    width: calc(1/5 * 100%);
+    width: calc(1 / 5 * 100%);
   }
 }
 @media screen and (min-width: 1400px) {
   .tile {
-    width: calc(1/6 * 100%);
+    width: calc(1 / 6 * 100%);
   }
 }
 @media screen and (min-width: 1625px) {
   .tile {
-    width: calc(1/7 * 100%);
+    width: calc(1 / 7 * 100%);
   }
 }
 @media screen and (min-width: 1850px) {
   .tile {
-    width: calc(1/8 * 100%);
+    width: calc(1 / 8 * 100%);
   }
 }
 
@@ -190,7 +190,7 @@ a {
  * Toolbar
  */
 .mdc-toolbar {
-  background-color: #376ad3 !important;
+  background-color: #131313 !important;
   transition: box-shadow 0.5s;
 }
 
@@ -281,7 +281,7 @@ a {
  * Card
  */
 .mdc-card {
-  background-color: #fff !important;
+  background-color: #2a2a2d !important;
 }
 .mdc-card:hover {
   /*box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);*/

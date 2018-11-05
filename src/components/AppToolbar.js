@@ -27,15 +27,31 @@ function AppToolbar(props) {
             placeholder="Search"
             autocomplete="off"
             autofocus="autofocus"
-            style={{ backgroundColor: '#2850A7', color: '#fff' }}
+            style={{ backgroundColor: '#1f2023', color: '#f1f1f1' }}
           />
         </ToolbarSection>
 
         <ToolbarSection alignEnd>
-          <ToolbarIconButton title="Bookmarks" href="chrome://bookmarks/" icon="star" />
-          <ToolbarIconButton title="Tabs" href="chrome://history/syncedTabs" icon="tab" />
-          <ToolbarIconButton title="History" href="chrome://history" icon="history" />
-          <ToolbarIconButton title="Downloads" href="chrome://downloads/" icon="file_download" />
+          <ToolbarIconButton
+            title="Bookmarks"
+            href="chrome://bookmarks/"
+            icon="star"
+          />
+          <ToolbarIconButton
+            title="Tabs"
+            href="chrome://history/syncedTabs"
+            icon="tab"
+          />
+          <ToolbarIconButton
+            title="History"
+            href="chrome://history"
+            icon="history"
+          />
+          <ToolbarIconButton
+            title="Downloads"
+            href="chrome://downloads/"
+            icon="file_download"
+          />
         </ToolbarSection>
       </ToolbarRow>
     </Toolbar>
