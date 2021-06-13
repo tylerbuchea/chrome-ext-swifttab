@@ -1,7 +1,7 @@
 /*global chrome*/
 
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 class Bookmarks extends React.Component {
   static propTypes = {
@@ -42,27 +42,29 @@ class Bookmarks extends React.Component {
         url: null,
         title: this.props.folder,
       },
-      results => {
-        // console.log('bookmarks search results: ', results);
-
+      (results) => {
         // If results, parse bookmarks
         results.length &&
-          chrome.bookmarks.getSubTree(results[0].id, data =>
+          chrome.bookmarks.getSubTree(results[0].id, (data) =>
             this.setBookmarks(data[0])
           );
 
         // Fallback to Bookmarks Bar
         !results.length &&
-          chrome.bookmarks.getSubTree('1', data => this.setBookmarks(data[0]));
+          chrome.bookmarks.getSubTree("1", (data) => {
+            this.setBookmarks(data[0]);
+          });
       }
     );
   };
 
-  setBookmarks = folder => {
-    console.log('bookmarks folder: ', folder);
+  setBookmarks = (folder) => {
+    console.log("bookmarks folder: ", folder);
 
+    const filter = (bookmark) => bookmark.title[0] !== "#";
     const bookmarks = folder.children || [];
-    this.setState({ bookmarks });
+    const filteredBookmarks = filter ? bookmarks.filter(filter) : bookmarks;
+    this.setState({ bookmarks: filteredBookmarks });
   };
 
   render() {

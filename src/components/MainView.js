@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import AppToolbar from './AppToolbar';
-import BookmarksView from './BookmarksView';
+import React from "react";
+import PropTypes from "prop-types";
+import AppToolbar from "./AppToolbar";
+import BookmarksView from "./BookmarksView";
 
 class MainView extends React.Component {
   static propTypes = {
@@ -14,38 +14,37 @@ class MainView extends React.Component {
 
   state = {
     isScrolled: false,
-    search: '',
+    search: "",
   };
 
-  handleSearchChange = e =>
+  handleSearchChange = (e) =>
     this.setState({ search: e.target.value.toLowerCase() });
 
-  handleScrollChange = e => {
+  handleScrollChange = (e) => {
     const isScrolled = e.target.scrollTop > 0 ? true : false;
     isScrolled !== this.state.isScrolled && this.setState({ isScrolled });
   };
 
   filterBookmarks(bookmarks, filter) {
-    console.log('filter: ', filter);
+    console.log("filter: ", filter);
 
     // Clone bookmarks
     bookmarks = JSON.parse(JSON.stringify(bookmarks));
 
     // Filter bookmarks
     const bookmarksFiltered = bookmarks
-      .map(folder => {
+      .map((folder) => {
         folder.children &&
-          (folder.children = folder.children.filter(
-            bookmark =>
-              filter
-                ? bookmark.url && bookmark.title.toLowerCase().includes(filter)
-                : bookmark.url
+          (folder.children = folder.children.filter((bookmark) =>
+            filter
+              ? bookmark.url && bookmark.title.toLowerCase().includes(filter)
+              : bookmark.url
           ));
         return folder;
       })
-      .filter(folder => folder.children && folder.children.length);
+      .filter((folder) => folder.children && folder.children.length);
 
-    console.log('filtered bookmarks: ', bookmarksFiltered);
+    console.log("filtered bookmarks: ", bookmarksFiltered);
 
     return bookmarksFiltered;
   }
@@ -60,7 +59,7 @@ class MainView extends React.Component {
       <div class="no-bookmarks">No search results found</div>
     ) : (
       <div class="no-bookmarks fadein">
-        Bookmarks in <strong>Bookmarks Bar</strong> or{' '}
+        Bookmarks in <strong>Bookmarks Bar</strong> or{" "}
         <strong>{this.props.folder}</strong> appear here
       </div>
     );
