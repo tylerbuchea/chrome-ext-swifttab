@@ -6,11 +6,9 @@
   "version": "0.1.0",
   "homepage_url": "https://github.com/tylerbuchea/chrome-ext-swifttab",
   "author": "Tyler Buchea",
-  "permissions": ["bookmarks", "chrome://favicon/", "activeTab", "tabs"],
-  "browser_action": {},
-  "background": {
-    "persistent": true,
-    "scripts": ["background.js"]
+  "permissions": ["bookmarks", "chrome://favicon/"],
+  "chrome_url_overrides": {
+    "newtab": "index.html"
   },
   "icons": {
     "16": "assets/icon-16.png",
